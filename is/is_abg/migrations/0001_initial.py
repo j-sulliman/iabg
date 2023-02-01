@@ -18,6 +18,7 @@ class Migration(migrations.Migration):
                 ('document_type', models.CharField(choices=[('Word', 'Word Document'), ('Excel', 'Excel Workbook'), ('Both', 'Both')], default='both', max_length=200)),
                 ('document_author', models.CharField(default='First-name Last-name', help_text='Use puns liberally', max_length=200)),
                 ('customer_name', models.CharField(default='Demo Intersight Customr', max_length=200)),
+                ('host', models.TextField(default='Host')),
                 ('private_api_key', models.TextField(default='Private Key')),
                 ('public_api_key', models.TextField(default='Public Key')),
                 ('Select_Document_Sections', models.CharField(choices=[('All', 'All'), ('1', 'Physical'), ('2', 'Firmware'), ('3', 'Compute Summary'), ('4', 'Rack Servers'), ('5', 'Blade Servers'), ('6', 'Hyperflex'), ('7', 'Physical Ports'), ('8', 'FC Ports'), ('9', 'Service Profiles'), ('10', 'Management Addressing')], default='All', max_length=200)),

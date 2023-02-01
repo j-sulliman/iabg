@@ -94,6 +94,8 @@
                                    <span class="m-0 font-weight-bold text-primary">Enter the Intersight API Keys</span>
                                </div>
                                <div class="card-body">
+                                   <p><b>This tool is only compatible with API Keys for OpenAPI Schema version 2.</b></p>
+                                   <p>If you don't see a form to put your public and secret keys, please click on "<a href="/abg.html">iABG</a>"</p>
                                 <form method="POST" class="post-form">{% csrf_token %}
                                     <div class="form-group">
                                     {{ form.as_p }}
@@ -138,7 +140,7 @@
                                     <div class="card-body">
                                       <h5 class="card-title">AsBuilt Word Document</h5>
                                       <p class="card-text">Click below to download the AsBuilt document in word report format:</p>
-                                      <a href="http://127.0.0.1:8080/mediafiles/intersight-demo.docx" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                      <a href="/mediafiles/intersight_output.docx" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                         class="fas fa-download fa-sm text-white-50"></i> Word Report</a>
                                     </div>
                                   </div>
@@ -150,7 +152,7 @@
                                     <div class="card-body">
                                       <h5 class="card-title">AsBuilt Excel Workbook</h5>
                                       <p class="card-text">Click below to download the Excel Workbook.</p>
-                                      <a href="http://127.0.0.1:8080/mediafiles/intersight_output.xlsx" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                      <a href="/mediafiles/intersight_output.xlsx" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                         class="fas fa-download fa-sm text-white-50"></i> Excel Workbook</a>
                                     </div>
                                   </div>
@@ -162,8 +164,9 @@
                                     <div class="card-body">
                                       <h5 class="card-title">Draw.io Diagram</h5>
                                       <p class="card-text">Click below to download the diagram.</p>
-                                      <a href="http://127.0.0.1:8080/mediafiles/intersight.drawio" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                      <a href="/mediafiles/intersight.drawio" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                         class="fas fa-download fa-sm text-white-50"></i>DrawIO Template</a>
+                                        <p class="card-text">(Not automatically generated)</p>
                                     </div>
                                   </div>
                                   </div>

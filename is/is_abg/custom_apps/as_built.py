@@ -9,7 +9,7 @@ import os
 def create_word_doc_title(doc_title = ''):
     CURR_DIR = os.getcwd()
     print(CURR_DIR)
-    doc = Document(r".\is_abg\custom_apps\doc\Intersight.AsBuilt.docx")
+    doc = Document(r"./is_abg/custom_apps/doc/Intersight.AsBuilt.docx")
     section = doc.sections[0]
     section.orientation = WD_ORIENT.LANDSCAPE
     doc.add_heading(doc_title, 0)

@@ -42,7 +42,7 @@ Drawio Diagram:
 # Setup
 
 *Virtual Environment Windows*
-```poswershell
+```powershell
 python -m venv venv
 .\venv\Scripts\activate
 ```
@@ -57,18 +57,19 @@ $ source venv/bin/activate
 git init
 git pull https://github.com/j-sulliman/iabg.git
 
-Install the required dependencies:
-cd is
-pip install -r .\requirements.txt
 
-Installing collected packages: urllib3, six, idna, charset-normalizer, certifi, sqlparse, requests, pytz, python-dateutil, pycryptodomex, pycryptodome, numpy, lxml, et-xmlfile, asgiref, python-docx, pandas, openpyxl, intersight-rest, Django
+# Install the required dependencies:
+cd is
+pip install -r ./requirements.txt
+
+> Installing collected packages: urllib3, six, idna, charset-normalizer, certifi, sqlparse, requests, pytz, python-dateutil, pycryptodomex, pycryptodome, numpy, lxml, et-xmlfile, asgiref, python-docx, pandas, openpyxl, intersight-rest, Django
 Successfully installed Django-3.2.6 asgiref-3.4.1 certifi-2021.5.30 charset-normalizer-2.0.4 et-xmlfile-1.1.0 idna-3.2 intersight-rest-1.1.7 lxml-4.6.3 numpy-1.21.2 openpyxl-3.0.7 pandas-1.3.2 pycryptodome-3.10.1 pycryptodomex-3.10.1 python-dateutil-2.8.2 python-docx-0.8.11 pytz-2021.1 requests-2.26.0 six-1.16.0 sqlparse
 
 ```
 
 # Start Django Server
 ```
-python .\manage.py runserver 0.0.0.0:8080
+python ./manage.py runserver 0.0.0.0:8080
 
 Watching for file changes with StatReloader
 Performing system checks...
