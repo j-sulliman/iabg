@@ -6,6 +6,7 @@ from .custom_apps.intersight_rest import intersight_get
 from .custom_apps.as_built import create_word_doc_paragraph, create_word_doc_table, create_word_doc_title
 import pandas as pd
 import os
+import hashlib
 
 from .forms import iabgForm
 
@@ -143,9 +144,9 @@ def abg(request):
                 hyperflex_node_df = pd.DataFrame.from_dict(hyperflex_node['Results'])
                 hyperflex_node_df = hyperflex_node_df.drop(columns=['ClassId', 'Moid', 'ObjectType'], errors='ignore')
                 hyperflex_cluster_df_list = []
-                for i in hyperflex_cluster['Results']:
+                for res in hyperflex_cluster['Results']:
                     # pp.pprint(i['Summary'])
-                    hyperflex_cluster_df = pd.DataFrame.from_dict(i['Summary'])
+                    hyperflex_cluster_df = pd.DataFrame.from_dict(res['Summary'])
                     hyperflex_cluster_df = hyperflex_cluster_df.drop(columns=['ClassId', 'ObjectType', 'Boottime',
                                                                               'CompressionSavings',
                                                                               'DeduplicationSavings', 'Downtime',
@@ -214,9 +215,9 @@ def abg(request):
                 # Management
                 doc = create_word_doc_paragraph(doc=doc, heading_text='Management')
                 doc = create_word_doc_table(doc, management_df)
-                doc.save(r'staticfiles/mediafiles/intersight_output.docx')
+                doc.save(f'staticfiles/mediafiles/intersight_output_{hashlib.sha256((i.public_api_key).encode("utf-8")).hexdigest()[:10]}.docx')
 
-                with pd.ExcelWriter(r'staticfiles/mediafiles/intersight_output.xlsx') as writer:
+                with pd.ExcelWriter(f'staticfiles/mediafiles/intersight_output_{hashlib.sha256((i.public_api_key).encode("utf-8")).hexdigest()[:10]}.xlsx') as writer:
                     management_df.to_excel(writer, sheet_name='management')
                     service_profile_df.to_excel(writer, sheet_name='service_profile')
                     hyperflex_health_df.to_excel(writer, sheet_name='hyperflex_health')

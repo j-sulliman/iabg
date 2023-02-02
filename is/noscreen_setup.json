@@ -1,0 +1,14 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "intersight_list": [
+    {
+      "public_key": "example0uJjro4yThoMm98pu/cAlembcfixdhKWjEIhVPeyTK/6mjRQO48sACjcdbS5tZGH4E4",
+      "private_file": "secret.txt"
+    },
+    {
+      "host": "http://intersight.com",
+      "public_key": "example1ghWXK5PXjidHeVMKW/Zm6lnJNL454hyLIENNOZng7q/NwuEfNk1qh534xdCfCzyMw3b",
+      "private_file": "secret_1.txt"
+    }
+  ]
+}
