@@ -80,5 +80,19 @@ Django version 3.2.6, using settings 'is.settings'
 Starting development server at http://0.0.0.0:8080/
 Quit the server with CTRL-BREAK.
 ```
+### Optionnal: Use iABG without a browser
 
+iABG can also be used without any browser. 
+In order to iABG on CLI, you have to modify [noscreen_setup.json](is/noscreen_setup.json) to add :
+- The URL where the Django servers runs
+- The host of the Intersight that you want to use (*http://intersight.com* by default)
+- The public key of the Intersight
+- Save your private key as a file, place it in directory */iabg/is*; then put the filename into the setup file
 
+Note: You can put different Intersight in the *intersight_list* array in the [sample file](is/noscreen_setup.json)
+```
+python ./noscreen.py noscreen_setup.json 
+
+> Sending request on http://127.0.0.1:8080/ for http://intersight.com
+Output files saved : staticfiles/mediafiles/intersight_output_d6p7e27bc4
+```
